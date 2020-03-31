@@ -1,0 +1,6 @@
+html[data-sap-ui-browser^="sf"] .sapUiFupInputMask>input,
+html[data-sap-ui-browser^="cr"] .sapUiFupInputMask>input {
+    left: auto;
+    opacity: 0.01;
+    position: inherit !important;
+}

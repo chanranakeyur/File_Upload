@@ -1,0 +1,50 @@
+<mvc:View controllerName="com.FileUploaderBasic.controller.App" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" class="viewPadding">
+	<App>
+		<pages>
+			<Shell>
+				<Page title="File Upload">
+					<content>
+						<FlexBox>
+							<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your csv file" uploadComplete="onUploadComplete"
+								change="onValueChange" typeMissmatch="onTypeMismatch" style="Emphasized" fileType="csv" placeholder="Choose a file for Upload..."/>
+							<Button text="Upload File" press="onUploadPress" type="Accept"/>
+							<Button icon="sap-icon://download" text="Download" press="onDataExport" tooltip="Download" id="download"/>
+						</FlexBox>
+						<Table id="itemsTable" inset="false" items="{/}" updateFinished="onTableUpdateFinished">
+							<headerToolbar>
+								<Toolbar>
+									<Title id="tblTitle" text="Data Items" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column width="70%">
+									<Text text="Description"/>
+								</Column>
+								<Column width="70%">
+									<Text text="Order Type"/>
+								</Column>
+								<Column width="70%">
+									<Text text="Functional Location"/>
+								</Column>
+								<Column width="70%">
+									<Text text="Planning Plant"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{Description}"/>
+										<Text text="{Order Type}"/>
+										<Text text="{Functional Location}"/>
+										<Text text="{Planning Plant}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</Shell>
+		</pages>
+	</App>
+</mvc:View>
